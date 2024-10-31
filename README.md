@@ -4,7 +4,7 @@
 
 ## Features
 - Merges all files in a LaTeX project into a single directory.
-- Updates `\include` and `\input` paths for compatibility in the flattened structure.
+- Updates `\input` and `\includegraphics` paths for compatibility in the flattened structure.
 - Supports easy integration into CI/CD pipelines for automated submission preparations.
 
 ## Installation
