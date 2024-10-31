@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lateflat"
-version = "0.1.0"
+version = "0.1.1"
 description = "A command-line tool to flatten LaTeX projects into a single root directory for easy submission."
 readme = "README.md"
 requires-python = ">=3.7"
