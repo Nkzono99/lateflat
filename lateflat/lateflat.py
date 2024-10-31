@@ -19,11 +19,20 @@ def parse_args():
 def main():
     args = parse_args()
 
-    if args.root.endswith("zip"):
-        with ZipFile(args.root) as myzip:
-            myzip.extractall(args.root.replace(".zip", ""))
+    # When specifying a directory path with spaces on Windows, 
+    # the path should be enclosed in quotation marks.
+    #
+    # However, if there is a trailing backslash, 
+    # it escapes the closing quotation mark, so it needs to be removed.
+    #
+    # Example: "parent\directory path\" -> args.root = parent\directory path"
+    root = args.root.replace('"', "")
 
-    root_dir = Path(args.root.replace(".zip", ""))
+    if root.endswith("zip"):
+        with ZipFile(root) as myzip:
+            myzip.extractall(root.replace(".zip", ""))
+
+    root_dir = Path(root.replace(".zip", ""))
     lines = flatten_with_input(args.input, root_dir=root_dir)
 
     if args.output_dir is None:
