@@ -1,0 +1,2 @@
+# lateflat
+Flatten latex project
